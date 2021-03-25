@@ -20,4 +20,7 @@ class Entry(models.Model):
 
     def __str__(self):
         """Devolve uma representação em string do modelo."""
-        return self.text[:50] + "..."
+        if self.text <= self.text[:50]:
+            return self.text
+        else:
+            return self.text[:50] + "..."
